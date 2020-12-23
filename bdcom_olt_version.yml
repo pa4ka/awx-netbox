@@ -1,0 +1,11 @@
+---
+
+  - name: Run show commands on routers
+    hosts: '{{ olt_ip }}'
+    gather_facts: false
+
+    tasks:
+      - name: run multiple commands and evaluate the output
+        cisco.ios.ios_command:
+           commands:
+           - show version
